@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     private float detectionRange = 5f;
     private Vector2 patrolStart;
     private Vector2 patrolEnd; 
-    private bool movingRight = true;
+    public bool movingRight = true;
 
     [Header("Attack Settings")]
     private float attackRange = 1f;

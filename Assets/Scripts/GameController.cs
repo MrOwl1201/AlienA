@@ -29,6 +29,15 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         
     }
+    public void Tutorial()
+    {
+        AudioManager.instance.PlaySoundEffect(15);
+        Time.timeScale = 1;
+        SaveGame();
+        ScoreManager.instance.SaveScore();
+        SceneManager.LoadScene("Tutorial");
+
+    }
     public void NextLevel()
     {
         AudioManager.instance.PlaySoundEffect(15);

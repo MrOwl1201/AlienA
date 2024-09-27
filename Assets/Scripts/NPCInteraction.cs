@@ -23,7 +23,7 @@ public class NPCInteraction : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 1f;
+       // Time.timeScale = 1f;
         interactionUI.SetActive(false);
     }
 

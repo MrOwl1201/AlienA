@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 patrolStart;
     private Vector2 patrolEnd;
-    private bool movingRight = true;
+    public bool movingRight = true;
     private Transform player;
     private float lastShotTime;
     private bool isShooting = false;

@@ -12,13 +12,7 @@ public class PauseManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
-        }
-        else
-        {
-            Time.timeScale = 1;
-            isPaused = false;
-        }    
-            
+        }  
     }
        
     public void TogglePause()
@@ -26,6 +20,13 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
         Time.timeScale = isPaused ? 0 : 1;
+        Debug.Log("Paused: " + isPaused);
+    }
+    public void ExitPause()
+    {
+        Time.timeScale = 1;
+        isPaused = false;
+        pauseMenu.SetActive(false);
     }
 }
 

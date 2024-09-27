@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7095d0b222d3c6b4ba5dab6187237d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movingRight: 1
   healthBarFill: {fileID: 6392743058692988855}
   healthBarText: {fileID: 5310871747177776532}
 --- !u!70 &2841204515716367666
@@ -487,6 +488,7 @@ GameObject:
   - component: {fileID: 6709046577582815767}
   - component: {fileID: 203173951096636386}
   - component: {fileID: 5310871747177776532}
+  - component: {fileID: 1250591303952443245}
   m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -610,3 +612,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1250591303952443245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683396871710725420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9070583cb1a24484080d1d1d0342c12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

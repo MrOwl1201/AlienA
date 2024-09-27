@@ -39,19 +39,5 @@ public class EnemyBullet : MonoBehaviour
         }    
             
     }
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
 
-    //        Destroy(gameObject);
-    //    }
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        PlayerController hurt = collision.gameObject.GetComponent<PlayerController>();
-    //        hurt.TakeDamage(damage);
-    //        Destroy(gameObject);
-    //    }
-
-    //}
 }

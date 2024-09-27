@@ -19,15 +19,8 @@ public class AudioManager : MonoBehaviour
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float masterVolume = 1f;
     [Range(0f, 1f)] public float backgroundVolume = 0.5f;
-    [Range(0f, 1f)] public float efxVolume = 0.5f;
+    [Range(0f, 1f)] public float efxVolume = 0.75f;
 
-    private void Start()
-    {
-        PlayerPrefs.SetFloat("MasterVolume", masterVolume);
-        PlayerPrefs.SetFloat("BackgroundVolume", backgroundVolume);
-        PlayerPrefs.SetFloat("EfxVolume", efxVolume);
-        PlayerPrefs.Save();
-    }
     void Awake()
     {
         if (instance == null)
@@ -37,17 +30,20 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         backgroundSource = gameObject.AddComponent<AudioSource>();
         effectsSource = gameObject.AddComponent<AudioSource>();
 
-        backgroundSource.loop = true;
-        backgroundSource.volume = backgroundVolume * masterVolume;
-        PlayMusic(backgroundMusic);
         masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
         backgroundVolume = PlayerPrefs.GetFloat("BackgroundVolume", 0.5f);
         efxVolume = PlayerPrefs.GetFloat("EfxVolume", 0.75f);
+
+        backgroundSource.loop = true;
+        backgroundSource.volume = backgroundVolume * masterVolume;
+        PlayMusic(backgroundMusic);
+        
 
         UpdateVolumeLevels();
     }
@@ -63,6 +59,10 @@ public class AudioManager : MonoBehaviour
         if (index >= 0 && index < soundEffects.Length)
         {
             effectsSource.PlayOneShot(soundEffects[index], efxVolume * masterVolume);
+        }
+        else
+        {
+            Debug.LogWarning("Sound effect index out of range: " + index);
         }
     }
 
@@ -84,7 +84,9 @@ public class AudioManager : MonoBehaviour
 
     public void SetEfxVolume(float volume)
     {
+        PlaySoundEffect(4);
         efxVolume = volume;
+        Debug.Log("Efx Volume: " + efxVolume);
         PlayerPrefs.SetFloat("EfxVolume", efxVolume);
         PlayerPrefs.Save();
         UpdateVolumeLevels();
@@ -93,7 +95,6 @@ public class AudioManager : MonoBehaviour
     private void UpdateVolumeLevels()
     {
         backgroundSource.volume = backgroundVolume * masterVolume;
-        effectsSource.volume= efxVolume * masterVolume;
     }
 }
 

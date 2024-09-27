@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5442540720539643431, guid: a3a5f4a95f293394da20bdb9873b18ce, type: 3}
   firePoint: {fileID: 8919881759690250078}
+  movingRight: 1
   maxHealth: 100
   healthBarFill: {fileID: 2000979441927705202}
   healthBarText: {fileID: 7192082365692145512}
@@ -445,6 +446,7 @@ GameObject:
   - component: {fileID: 1546243071475401596}
   - component: {fileID: 7364472366918441719}
   - component: {fileID: 7192082365692145512}
+  - component: {fileID: 769616307041152184}
   m_Layer: 8
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -568,6 +570,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &769616307041152184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7273912543705989409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9070583cb1a24484080d1d1d0342c12a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8734770249674770597
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
     private bool isCooldown2 = true;
     private Transform player;
     private Animator animator;
-    private bool isMovingRight = true;
+    public bool movingRight = true;
     private float attackRange = 2f;
     private Vector2 patrolStart; 
     private Vector2 patrolEnd; 
@@ -93,12 +93,12 @@ public class BossController : MonoBehaviour
     }
     void Patrol()
     {
-        if (isMovingRight)
+        if (movingRight)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolEnd, moveSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, patrolEnd) < 0.1f)
             {
-                isMovingRight = false;
+                movingRight = false;
             }
         }
         else
@@ -106,7 +106,7 @@ public class BossController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, patrolStart, moveSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, patrolStart) < 0.1f)
             {
-                isMovingRight = true;
+                movingRight = true;
             }
         }
     }
@@ -117,11 +117,11 @@ public class BossController : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
         if (player.position.x > transform.position.x)
         {
-            isMovingRight = true;
+            movingRight = true;
         }
         else
         {
-            isMovingRight = false;
+            movingRight = false;
         }
     }
     IEnumerator StopAndAttack()
@@ -263,7 +263,7 @@ void UpdateHealth()
     void UpdateBossDirection()
     {
 
-        if (isMovingRight)
+        if (movingRight)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
