@@ -24,6 +24,7 @@ public class PlayerFinish : MonoBehaviour
     {
         if (pulling)
         {
+            AudioManager.instance.PlayUFO();
             player.position = Vector3.MoveTowards(player.position, ufoPosition.position, pullSpeed * Time.deltaTime);
 
             if (Vector3.Distance(player.position, ufoPosition.position) < 0.1f)

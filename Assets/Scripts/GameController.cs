@@ -15,14 +15,14 @@ public class GameController : MonoBehaviour
     }
     public void RestartLevel()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         ScoreManager.instance.SaveScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void Home()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         SaveGame();
         ScoreManager.instance.SaveScore();
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
     }
     public void Tutorial()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         SaveGame();
         ScoreManager.instance.SaveScore();
@@ -40,7 +40,7 @@ public class GameController : MonoBehaviour
     }
     public void NextLevel()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         PlayerPrefs.SetInt("CurrentLevel", nextLevel);

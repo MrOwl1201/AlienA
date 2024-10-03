@@ -15,10 +15,15 @@ public class ShieldSkill : MonoBehaviour
 
     private void Start()
     {
-        if(skill3Enabled)
+        if(!skill3Enabled)
+        {
+            cooldownImage.fillAmount = 0f;
+        }
+        else
         {
             cooldownImage.fillAmount = 1f;
-        }    
+        }
+
     }
     void Update()
     {
@@ -35,7 +40,7 @@ public class ShieldSkill : MonoBehaviour
 
     IEnumerator ActivateShield()
     {
-        AudioManager.instance.PlaySoundEffect(4);
+        AudioManager.instance.PlayShield();
         GameObject shield = Instantiate(shieldEffect, transform.position, Quaternion.identity, transform);
         isShieldActive = true;
         isCooldown = true;

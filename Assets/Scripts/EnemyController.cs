@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
     }
     void Shoot()
     {
-        AudioManager.instance.PlaySoundEffect(12);
+        AudioManager.instance.PlayEnemyShoot();
         if (bulletPrefab == null || firePoint == null)
         {
             Debug.LogError("Bullet prefab hoặc fire point bị null.");
@@ -152,7 +152,7 @@ public class EnemyController : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        AudioManager.instance.PlaySoundEffect(13);
+        AudioManager.instance.PlayEnemyHurt();
         currentHealth -= amount;
         UpdateHealthBar();
         if (currentHealth < 0)
@@ -172,7 +172,7 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
          animator.SetTrigger("Dead");
-        AudioManager.instance.PlaySoundEffect(14);
+        AudioManager.instance.PlayEnemyDie();
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
         ScoreManager.instance.AddScore(800);

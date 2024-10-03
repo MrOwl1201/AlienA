@@ -22,21 +22,21 @@ public class MenuSettings : MonoBehaviour
     }
     public void Home()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
-    void SetMasterVolume(float volume)
+    public void SetMasterVolume(float volume)
     {
         AudioManager.instance.SetMasterVolume(volume);
     }
 
-    void SetBackgroundVolume(float volume)
+    public void SetBackgroundVolume(float volume)
     {
         AudioManager.instance.SetBackgroundVolume(volume);
     }
 
-    void SetEfxVolume(float volume)
+    public void SetEfxVolume(float volume)
     {
         AudioManager.instance.SetEfxVolume(volume);
     }

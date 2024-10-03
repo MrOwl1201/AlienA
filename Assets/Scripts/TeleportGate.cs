@@ -12,7 +12,7 @@ public class TeleportGate : MonoBehaviour
     {
         if (other.gameObject == player && !isTeleported)
         {
-            AudioManager.instance.PlaySoundEffect(16);
+            AudioManager.instance.PlayTeleport();
             player.transform.position = teleportTarget.position;
             StartCoroutine(TeleportCooldown());
         }

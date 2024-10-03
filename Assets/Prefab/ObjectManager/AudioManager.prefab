@@ -44,25 +44,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f136145be1627274480d201e465e152c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: ea4cb4753ecf7425cae77595ec7d0df6, type: 3}
-  soundEffects:
-  - {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
-  - {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
-  - {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
-  - {fileID: 8300000, guid: 06ada5590eba8d6489b36c6f3c54ff78, type: 3}
-  - {fileID: 8300000, guid: 5e1a9f876d3dafd47bc6b3dde25135fa, type: 3}
-  - {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
-  - {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
-  - {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
-  - {fileID: 8300000, guid: b1b9c1f0ea1fcae439ed1a4d44ff05fd, type: 3}
-  - {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
-  - {fileID: 8300000, guid: d1afd3f4d23c24f418ffc315afb04965, type: 3}
-  - {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
-  - {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
-  - {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
-  - {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
-  - {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
-  - {fileID: 8300000, guid: 8ff2a2d7e79f81c40ac447512f879374, type: 3}
+  theme: {fileID: 8300000, guid: 55e01f38ab4084f14b8ee0ae8d77b5b4, type: 3}
+  jump: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+  run: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+  shoot: {fileID: 8300000, guid: 4310474905e266640852f43bd609a1a4, type: 3}
+  bomup: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
+  bom: {fileID: 8300000, guid: 06ada5590eba8d6489b36c6f3c54ff78, type: 3}
+  shield: {fileID: 8300000, guid: 5e1a9f876d3dafd47bc6b3dde25135fa, type: 3}
+  heal: {fileID: 8300000, guid: c48a972d3d024c2408a3331750786a29, type: 3}
+  highJump: {fileID: 8300000, guid: b1b9c1f0ea1fcae439ed1a4d44ff05fd, type: 3}
+  coin: {fileID: 8300000, guid: 78419f98379502c4dbfb2774bc94e7c1, type: 3}
+  hurt: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
+  dead: {fileID: 8300000, guid: 2b21ef916f6943c439b71a7c74568878, type: 3}
+  enrage: {fileID: 8300000, guid: d1afd3f4d23c24f418ffc315afb04965, type: 3}
+  eAttack: {fileID: 8300000, guid: 7c47b20bb9874304a809dc5580d403ba, type: 3}
+  eShoot: {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
+  eHurt: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
+  eDie: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
+  scene: {fileID: 8300000, guid: 6cf9c85b5a3b88c468b21b9d21250adf, type: 3}
+  teleport: {fileID: 8300000, guid: 8ff2a2d7e79f81c40ac447512f879374, type: 3}
+  UFO: {fileID: 8300000, guid: 7a9de5c4d998126449cf964a6b27a8b0, type: 3}
+  bossJump: {fileID: 8300000, guid: b7f8695cf65a4f24eb37544298821146, type: 3}
+  audioPrefab: {fileID: 0}
   masterVolume: 1
   backgroundVolume: 0.5
-  efxVolume: 0.5
+  efxVolume: 0.75

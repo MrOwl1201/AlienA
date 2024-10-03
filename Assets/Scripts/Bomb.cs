@@ -25,6 +25,7 @@ public class Bomb : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayer);
         foreach (Collider2D enemy in enemies)
         {
+            AudioManager.instance.PlayBom();
             EnemyController enemyHealth = enemy.GetComponent<EnemyController>();
             if (enemyHealth != null)
             {

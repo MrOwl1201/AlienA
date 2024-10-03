@@ -150,7 +150,7 @@ public class BossController : MonoBehaviour
         isAttacking = true;
         isCooldown1 = false;
         skill1Icon.fillAmount = 0;
-        AudioManager.instance.PlaySoundEffect(11);
+        AudioManager.instance.PlayEnemyAttack();
         Debug.Log("Boss Attack!");
         if(player!=null)
         {
@@ -193,7 +193,7 @@ public class BossController : MonoBehaviour
         stompAreaIndicator.SetActive(false);
         animator.SetTrigger("Skill2");
         Debug.Log("Boss dậm nhảy!");
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayBossJump();
         DealStompDamage();
         yield return new WaitForSeconds(skill2Cooldown);
         animator.SetBool("isJump", false);
@@ -274,7 +274,7 @@ void UpdateHealth()
     }
     IEnumerator Enrage()
     {
-        AudioManager.instance.PlaySoundEffect(10);
+        AudioManager.instance.PlayEnrage();
         isEnraged = true;
         enrageIcon.SetActive(true);
         damage *= enragedDamageMultiplier;
@@ -287,7 +287,7 @@ void UpdateHealth()
 
     public void TakeDamage(float damage)
     {
-        AudioManager.instance.PlaySoundEffect(13);
+        AudioManager.instance.PlayEnemyHurt();
         currentHealth -= damage;
         UpdateHealth();
         if(currentHealth < 0)
@@ -306,7 +306,7 @@ void UpdateHealth()
 
     void Die()
     {
-        AudioManager.instance.PlaySoundEffect(14);
+        AudioManager.instance.PlayEnemyDie();
         ScoreManager.instance.AddScore(1200);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

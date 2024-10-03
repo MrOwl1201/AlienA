@@ -21,6 +21,7 @@ public class PlayerStart : MonoBehaviour
     {
         if (dropping)
         {
+            AudioManager.instance.PlayUFO();
             player.position = Vector3.MoveTowards(player.position, dropPosition.position, dropSpeed * Time.deltaTime);
 
             if (Vector3.Distance(player.position, dropPosition.position) < 0.1f)

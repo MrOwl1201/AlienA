@@ -12,7 +12,6 @@ public class GameProgressManager : MonoBehaviour
     public GameObject gameLose;
     public GameObject SettingMenu;
     public GameObject Story;
-
     private void Awake()
     {
         if (Instance == null)
@@ -27,7 +26,7 @@ public class GameProgressManager : MonoBehaviour
     }
     public void RestartLevel()
     {
-        AudioManager.instance.PlaySoundEffect(15);
+        AudioManager.instance.PlayScene();
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

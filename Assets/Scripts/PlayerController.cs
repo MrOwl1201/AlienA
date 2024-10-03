@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     }
     void Move()
     {
-        AudioManager.instance.PlaySoundEffect(0);
+        AudioManager.instance.PlayRun();
         float moveInput = Input.GetAxis("Horizontal");
        // Debug.Log($"Move Input: {moveInput}");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        AudioManager.instance.PlaySoundEffect(1);
+        AudioManager.instance.PlayJump();
         if (Input.GetButtonDown("Jump") && isGrounded )
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
     void Shoot()
     {
         nextFire = Time.time + fireRate;
-        AudioManager.instance.PlaySoundEffect(2);
+        AudioManager.instance.PlayShoot();
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         if (isFacingRight)
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
         damage = shieldSkill.CalculateDamage(damage);
         if(damage > 0)
         {
-            AudioManager.instance.PlaySoundEffect(6);
+            AudioManager.instance.PlayHurt();
             currentHealth -= damage;
             if(currentHealth < 0)
                 currentHealth = 0;
@@ -202,14 +202,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            AudioManager.instance.PlaySoundEffect(4);
+            //AudioManager.instance.PlaySoundEffect(4);
         }    
         
     }
 
     void Die()
     {
-        AudioManager.instance.PlaySoundEffect(7);
+        AudioManager.instance.PlayDead();
         gameObject.SetActive(false);
         GameProgressManager.Instance.OnGameLose();
         Debug.Log("Player Died");
@@ -217,7 +217,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator HighJump(float duration, float boostAmount)
     {
-        AudioManager.instance.PlaySoundEffect(8);
+       // AudioManager.instance.PlaySoundEffect(8);
         cooldownHighJump.fillAmount = 1f; 
         jumpForce += boostAmount;
         float elapsedTime = 0f; 
@@ -235,7 +235,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator DamageUp(float duration, float boostAmount)
     {
-        AudioManager.instance.PlaySoundEffect(8);
+        //AudioManager.instance.PlaySoundEffect(8);
         cooldownHighJump.fillAmount = 1f;
         attackDamage += boostAmount;
         float elapsedTime = 0f;
@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Heal(int healAmount)
     {
-        AudioManager.instance.PlaySoundEffect(5);
+        //AudioManager.instance.PlaySoundEffect(5);
         currentHealth += healAmount;
         if (currentHealth > maxHealth)
         {

@@ -53,6 +53,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void OpenOptions()
     {
+        AudioManager.instance.PlayScene();
         SceneManager.LoadScene("SettingScene");
     }
     public void Continue()
@@ -61,6 +62,7 @@ public class MainMenuController : MonoBehaviour
     }
     public void Tutorial()
     {
+        AudioManager.instance.PlayScene();
         SceneManager.LoadScene("Tutorial");
     }
     public void ExitGame()

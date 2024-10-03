@@ -41,10 +41,12 @@ public class TutorialManager : MonoBehaviour
    
     public void Home()
     {
+        AudioManager.instance.PlayScene();
         SceneManager.LoadScene("MainMenu");
     }
     void StartGame()
     {
+        AudioManager.instance.PlayScene();
         SceneManager.LoadScene("Scene01");
     }
 }

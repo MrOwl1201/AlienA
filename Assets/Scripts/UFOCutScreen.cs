@@ -37,6 +37,7 @@ public class UFOCutScreen : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlayUFO();
           //  Debug.Log("Chưa đủ điều kiện để chuyển cảnh.");
         }
 

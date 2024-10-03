@@ -34,7 +34,7 @@ public class PlayerCutscene : MonoBehaviour
     }
     void Move()
     {
-        AudioManager.instance.PlaySoundEffect(0);
+       // AudioManager.instance.PlaySoundEffect(0);
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
@@ -57,7 +57,7 @@ public class PlayerCutscene : MonoBehaviour
     }
     void Jump()
     {
-        AudioManager.instance.PlaySoundEffect(1);
+       // AudioManager.instance.PlaySoundEffect(1);
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);

@@ -112,7 +112,7 @@ public class EnemyAI : MonoBehaviour
     IEnumerator Attack()
     {
         isAttack = false;
-        AudioManager.instance.PlaySoundEffect(11);
+        AudioManager.instance.PlayEnemyAttack();
         animator.SetTrigger("Attack");
         float attackAnimationDuration = 1.0f;
         yield return new WaitForSeconds(attackAnimationDuration);
@@ -125,7 +125,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        AudioManager.instance.PlaySoundEffect(13);
+        AudioManager.instance.PlayEnemyHurt();
         currentHealth -= amount;
         UpdateHealthBar();
         if (currentHealth < 0)
@@ -144,7 +144,7 @@ public class EnemyAI : MonoBehaviour
 
     void Die()
     {
-        AudioManager.instance.PlaySoundEffect(14);
+        AudioManager.instance.PlayEnemyDie();
         ScoreManager.instance.AddScore(500);
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

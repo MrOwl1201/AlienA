@@ -13,7 +13,7 @@ public class HighJumpItem : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null)
             {
-                AudioManager.instance.PlaySoundEffect(8);
+                AudioManager.instance.PlayHighJump();
                 player.StartCoroutine(player.HighJump(boostDuration, jumpBoost));
                 
             }

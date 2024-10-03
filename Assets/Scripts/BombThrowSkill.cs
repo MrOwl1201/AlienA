@@ -23,9 +23,9 @@ public class BombThrowSkill : MonoBehaviour
     private Animator anim;
     void Start()
     {
-        if (skill2Enabled)
+        if (!skill2Enabled)
         {
-            cooldownIcon.fillAmount = 1f;
+            cooldownIcon.fillAmount = 0f;
         }
         playerController =GetComponent<PlayerController>();
         lineRenderer.positionCount = lineResolution;
@@ -101,7 +101,7 @@ public class BombThrowSkill : MonoBehaviour
     void ThrowBomb()
     {
         StartCoroutine(Cooldown());
-        AudioManager.instance.PlaySoundEffect(3);
+        AudioManager.instance.PlayBomUp();
         GameObject bomb = Instantiate(bombPrefab, throwPoint.position, Quaternion.identity);
 
         float direction = playerController.isFacingRight ? 1f : -1f;

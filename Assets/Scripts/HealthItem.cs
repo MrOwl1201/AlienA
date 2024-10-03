@@ -13,7 +13,7 @@ public class HealthItem : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player != null)
             {
-                AudioManager.instance.PlaySoundEffect(5);
+                AudioManager.instance.PlayHeal();
                 player.Heal(healAmount);
                 Destroy(gameObject);
             }
