@@ -5,16 +5,15 @@ using UnityEngine.UI;
 public class EnemyHealthBar : MonoBehaviour
 {
     private Vector3 initialScale;
-    private EnemyAI enemy1;  // Thay đổi theo tên kẻ địch cụ thể
-    private EnemyController enemy2;  // Thay đổi theo tên kẻ địch cụ thể
-    private BossController enemy3;  // Thay đổi theo tên kẻ địch cụ thể
+    private EnemyAI enemy1; 
+    private EnemyController enemy2; 
+    private BossController enemy3; 
 
     void Start()
     {
-        // Lưu lại giá trị scale ban đầu của Text
+
         initialScale = transform.localScale;
 
-        // Lấy script Enemy từ đối tượng cha
         enemy1 = GetComponentInParent<EnemyAI>();
         enemy2 = GetComponentInParent<EnemyController>();
         enemy3 = GetComponentInParent<BossController>();
@@ -22,10 +21,7 @@ public class EnemyHealthBar : MonoBehaviour
 
     void LateUpdate()
     {
-        // Cố định rotation của Text để không bị xoay
         transform.rotation = Quaternion.identity;
-
-        // Kiểm tra hướng của kẻ địch
         if (enemy1 != null && enemy1.movingRight)
         {
             transform.localScale = new Vector3(Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
@@ -40,7 +36,6 @@ public class EnemyHealthBar : MonoBehaviour
         }
         else
         {
-            // Nếu tất cả các kẻ địch đều không phải là phải
             transform.localScale = new Vector3(-Mathf.Abs(initialScale.x), initialScale.y, initialScale.z);
         }
     }

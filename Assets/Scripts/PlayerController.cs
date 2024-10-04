@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
-    public float loseHeight = -100f;
+    public float loseHeight = -36f;
     public float moveSpeed = 1f;
     public float jumpForce = 7f;
 
@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
         healthBar.updateHealthBar(currentHealth, maxHealth);
         cooldownHighJump.fillAmount = 0f;
         debuff.fillAmount = 0f;
-        originalShootDamage = bulletScript.shootDamage;
-        originalBombDamage = bombScript.bombDamage;
+       // originalShootDamage = bulletScript.shootDamage;
+       // originalBombDamage = bombScript.bombDamage;
     }
 
     void Update()
@@ -77,9 +77,8 @@ public class PlayerController : MonoBehaviour
         }
         if (fireCooldownTimer <= 0f)
         {
-            cooldownImage.fillAmount = 1f; // Biểu tượng kỹ năng đầy
+            cooldownImage.fillAmount = 1f;
         }
-        // Kiểm tra nếu phím bắn súng được nhấn và không trong trạng thái cooldown
         if (Input.GetKeyDown(fireKey) && fireCooldownTimer <= 0&& skill1Enabled )
         {
             anim.SetTrigger("Shoot");
@@ -95,8 +94,7 @@ public class PlayerController : MonoBehaviour
             GameProgressManager.Instance.OnGameLose();
             Time.timeScale = 0;
         }
-        else
-            Time.timeScale = 1;
+        
         
         healthBar.updateHealthBar(currentHealth, maxHealth);
     }
@@ -197,27 +195,20 @@ public class PlayerController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 anim.SetTrigger("Dead");
-                 Die();
+                AudioManager.instance.PlayDead();
+                StartCoroutine(DieWithDelay());
             }
-        }
-        else
-        {
-            //AudioManager.instance.PlaySoundEffect(4);
-        }    
-        
+        }           
     }
-
-    void Die()
+    IEnumerator DieWithDelay()
     {
-        AudioManager.instance.PlayDead();
-        gameObject.SetActive(false);
-        GameProgressManager.Instance.OnGameLose();
+        yield return new WaitForSeconds(1.5f);
         Debug.Log("Player Died");
+        GameProgressManager.Instance.OnGameLose();
+        gameObject.SetActive(false);
     }
-
     public IEnumerator HighJump(float duration, float boostAmount)
     {
-       // AudioManager.instance.PlaySoundEffect(8);
         cooldownHighJump.fillAmount = 1f; 
         jumpForce += boostAmount;
         float elapsedTime = 0f; 
@@ -235,7 +226,6 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator DamageUp(float duration, float boostAmount)
     {
-        //AudioManager.instance.PlaySoundEffect(8);
         cooldownHighJump.fillAmount = 1f;
         attackDamage += boostAmount;
         float elapsedTime = 0f;
@@ -252,7 +242,6 @@ public class PlayerController : MonoBehaviour
     }
     public void Heal(int healAmount)
     {
-        //AudioManager.instance.PlaySoundEffect(5);
         currentHealth += healAmount;
         if (currentHealth > maxHealth)
         {
@@ -271,15 +260,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DamageBoostCoroutine(float boostAmount, float duration)
     {
         isBoostActive = true;
-
-        // Tăng sát thương của cả hai kỹ năng
         bulletScript.shootDamage += boostAmount;
         bombScript.bombDamage += boostAmount;
-
-        // Chờ cho đến khi hết thời gian hiệu lực
         yield return new WaitForSeconds(duration);
-
-        // Quay về sát thương ban đầu
         bulletScript.shootDamage = originalShootDamage;
         bombScript.bombDamage = originalBombDamage;
 

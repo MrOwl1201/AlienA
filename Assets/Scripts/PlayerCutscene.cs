@@ -13,7 +13,6 @@ public class PlayerCutscene : MonoBehaviour
     public bool isFacingRight = true;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    // Start is called before the first frame update
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
@@ -34,7 +33,7 @@ public class PlayerCutscene : MonoBehaviour
     }
     void Move()
     {
-       // AudioManager.instance.PlaySoundEffect(0);
+        AudioManager.instance.PlayRun();
         float moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
@@ -57,7 +56,7 @@ public class PlayerCutscene : MonoBehaviour
     }
     void Jump()
     {
-       // AudioManager.instance.PlaySoundEffect(1);
+        AudioManager.instance.PlayJump();
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);

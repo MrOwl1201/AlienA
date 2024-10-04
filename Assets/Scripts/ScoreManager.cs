@@ -13,13 +13,13 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     private int highScore;
     private int currentLevelIndex;
-    private string levelName;
+    private string currentLevelName;
 
     public static ScoreManager instance;
     void Start()
     {
-        levelName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        highScore = PlayerPrefs.GetInt(levelName + "_HighScore", 0);
+        currentLevelName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        highScore = PlayerPrefs.GetInt(currentLevelName + "_HighScore", 0);
         UpdateScoreUI();
 
     }
@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void SaveScore()
     {
-        PlayerPrefs.SetInt(levelName + "_HighScore", highScore);
+        PlayerPrefs.SetInt(currentLevelName + "_HighScore", highScore);
         PlayerPrefs.Save();
     }
     void UpdateScoreUI()

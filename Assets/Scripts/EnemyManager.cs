@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Để chuyển cảnh
 
 public class EnemyManager : MonoBehaviour
 {

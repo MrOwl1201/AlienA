@@ -35,7 +35,7 @@ public class GameProgressManager : MonoBehaviour
         Application.Quit();
     }
     public void OnGameWin()
-    {
+    {      
         gameWin.SetActive(true);
     }
     public void OnGameLose()

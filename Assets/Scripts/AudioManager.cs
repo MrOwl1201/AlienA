@@ -4,30 +4,30 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-  //  public AudioMixer audioMixer;  // Tham chiếu tới AudioMixer
-
-    public AudioClip theme; // Âm thanh nền
-    public AudioClip jump;  // Hiệu ứng âm thanh nhảy
-    public AudioClip run;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip shoot;  // Hiệu ứng âm thanh nhảy
-    public AudioClip bomup;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip bom;  // Hiệu ứng âm thanh nhảy
-    public AudioClip shield;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip heal;  // Hiệu ứng âm thanh nhảy
-    public AudioClip highJump;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip coin;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip hurt;  // Hiệu ứng âm thanh nhảy
-    public AudioClip dead;  // Hiệu ứng âm thanh nhảy
-    public AudioClip enrage;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip eAttack;  // Hiệu ứng âm thanh nhảy
-    public AudioClip eShoot;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip eHurt;  // Hiệu ứng âm thanh nhảy
-    public AudioClip eDie;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip scene;  // Hiệu ứng âm thanh nhặt đồng xu
-    public AudioClip teleport;  // Hiệu ứng âm thanh nhặt đồng xu
+    [Header("AudioClip")]
+    public AudioClip theme;
+    public AudioClip jump; 
+    public AudioClip run; 
+    public AudioClip shoot; 
+    public AudioClip bomup; 
+    public AudioClip bom; 
+    public AudioClip shield;
+    public AudioClip heal;
+    public AudioClip highJump;
+    public AudioClip coin; 
+    public AudioClip hurt; 
+    public AudioClip dead; 
+    public AudioClip enrage;
+    public AudioClip eAttack; 
+    public AudioClip eShoot; 
+    public AudioClip eHurt; 
+    public AudioClip eDie; 
+    public AudioClip scene; 
+    public AudioClip teleport; 
     public AudioClip UFO;
     public AudioClip bossJump;
 
+    [Header("AudioSource")]
     private AudioSource backgroundSource;
     private AudioSource jumpSource;
     private AudioSource runSource;
@@ -51,16 +51,16 @@ public class AudioManager : MonoBehaviour
     private AudioSource bossJumpSource;
 
     [Header("Volume Settings")]
-    [Range(0f, 1f)] public float masterVolume = 1f; // Âm lượng tổng
-    [Range(0f, 1f)] public float backgroundVolume = 0.5f; // Âm lượng nền
-    [Range(0f, 1f)] public float efxVolume = 0.75f; // Âm lượng hiệu ứng
+    [Range(0f, 1f)] public float masterVolume = 1f; 
+    [Range(0f, 1f)] public float backgroundVolume = 0.5f;
+    [Range(0f, 1f)] public float efxVolume = 0.75f;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-           // DontDestroyOnLoad(gameObject); // Đảm bảo AudioManager không bị hủy khi chuyển scene
+           // DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -70,31 +70,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //themeSource = gameObject.AddComponent<AudioSource>();
-        //jumpSource = gameObject.AddComponent<AudioSource>();
-        //runSource = gameObject.AddComponent<AudioSource>();
-        //shootSource = gameObject.AddComponent<AudioSource>();
-        //bomSource = gameObject.AddComponent<AudioSource>();
-        //bomupSource = gameObject.AddComponent<AudioSource>();
-        //shieldSource = gameObject.AddComponent<AudioSource>();
-        //coinSource = gameObject.AddComponent<AudioSource>();
-        //highJumpSource = gameObject.AddComponent<AudioSource>();
-        //healSource = gameObject.AddComponent<AudioSource>();
-        //hurtSource = gameObject.AddComponent<AudioSource>();
-        //deadSource = gameObject.AddComponent<AudioSource>();
-        //enrageSource = gameObject.AddComponent<AudioSource>();
-        //eAttackSource = gameObject.AddComponent<AudioSource>();
-        //eShootSource = gameObject.AddComponent<AudioSource>();
-        //eHurtSource = gameObject.AddComponent<AudioSource>();
-        //eDieSource = gameObject.AddComponent<AudioSource>();
-        //sceneSource = gameObject.AddComponent<AudioSource>();
-        //teleportSource = gameObject.AddComponent<AudioSource>();
-        //UFOSource = gameObject.AddComponent<AudioSource>();
-        
-        //themeSource.loop = true;
-        //PlayBackground(theme);
-        //Khởi tạo các nguồn âm thanh(AudioSource)
-        backgroundSource = CreateAudioSource(theme, true); // Nhạc nền lặp lại
+        backgroundSource = CreateAudioSource(theme, true);
         jumpSource = CreateAudioSource(jump, false);
         runSource = CreateAudioSource(run, false);
         shootSource = CreateAudioSource(shoot, false);
