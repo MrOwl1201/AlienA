@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: highScoreText
       value: 
       objectReference: {fileID: 1050791661}
+    - target: {fileID: 4940349149245006184, guid: b2709c49d0ec297479770c0efe487cc1, type: 3}
+      propertyPath: highScoreTextPause
+      value: 
+      objectReference: {fileID: 1581216424}
     - target: {fileID: 7487071810629349583, guid: b2709c49d0ec297479770c0efe487cc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.21
@@ -1081,7 +1085,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1572714396}
         m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
-        m_MethodName: ExitPause
+        m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1935,6 +1939,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitSetting
       objectReference: {fileID: 0}
+    - target: {fileID: 55629798358706891, guid: 820427c2cc1549742811707636a6829b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 962135406496500624, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_Text
       value: "Ch\xFAng t\xF4i c\u1EA7n b\u1EA1n ti\xEAu di\u1EC7t nh\u1EEFng k\u1EBB
@@ -1988,7 +1996,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a784fc2e0d4fd8e41a81bb2a93e5725a, type: 3}
     - target: {fileID: 3429211493355132210, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3429211493355132210, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2060,7 +2068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4692896454935558614, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4692896454935558614, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2164,7 +2172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7385662839807326354, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7385662839807326354, guid: 820427c2cc1549742811707636a6829b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2314,6 +2322,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4532957571409710110, guid: 820427c2cc1549742811707636a6829b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 446277065}
+    - targetCorrespondingSourceObject: {fileID: 4532957571409710110, guid: 820427c2cc1549742811707636a6829b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1581216426}
     - targetCorrespondingSourceObject: {fileID: 240699620939103632, guid: 820427c2cc1549742811707636a6829b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 793878107}
@@ -3343,6 +3354,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 64994857269161151, guid: 45efef6444ac4cb40b9f98fba5f64193, type: 3}
   m_PrefabInstance: {fileID: 1579577369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1581216423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1581216426}
+  - component: {fileID: 1581216425}
+  - component: {fileID: 1581216424}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1581216424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581216423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.03568411, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 96
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 9
+    m_MaxSize: 96
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1581216425
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581216423}
+  m_CullTransparentMesh: 1
+--- !u!224 &1581216426
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581216423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480489463}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 29.3768, y: 57.666}
+  m_SizeDelta: {x: 997.7883, y: 145.3318}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1612650804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6891653910023868135, guid: 172dea751ab54c04286aebd701547ec8, type: 3}

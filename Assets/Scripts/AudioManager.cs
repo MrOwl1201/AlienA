@@ -235,7 +235,7 @@ public class AudioManager : MonoBehaviour
     }    
     public void SetEfxVolume(float volume)
     {
-        //PlayBomUp();
+        PlayEnrage();
         efxVolume = volume;
         PlayerPrefs.SetFloat("EfxVolume", efxVolume);
         PlayerPrefs.Save();

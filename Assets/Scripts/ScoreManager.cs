@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public Text ScoreTextWin;
     public Text ScoreTextLose;
     public Text highScoreText;
+    public Text highScoreTextPause;
     public int score = 0;
     private int highScore;
     private int currentLevelIndex;
@@ -56,5 +57,6 @@ public class ScoreManager : MonoBehaviour
         highScoreText.text = "High Score: " + highScore;
         ScoreTextWin.text = "Score: " + score;
         ScoreTextLose.text = "Score: " + score;
+        highScoreTextPause.text = "High Score: " + highScore;
     }
 }

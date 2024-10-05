@@ -28,7 +28,7 @@ public class PauseManager : MonoBehaviour
         isPaused = false;  
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;    
@@ -38,11 +38,6 @@ public class PauseManager : MonoBehaviour
     {
         Application.Quit(); 
     }
-    public void ExitPause()
-    {
-        Time.timeScale = 1f;
-        isPaused = false;
-        pauseMenu.SetActive(false);
-    }
+
 }
 
