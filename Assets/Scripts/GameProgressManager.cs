@@ -11,7 +11,6 @@ public class GameProgressManager : MonoBehaviour
     public GameObject gameWin;
     public GameObject gameLose;
     public GameObject SettingMenu;
-    public GameObject Story;
     private void Awake()
     {
         if (Instance == null)
@@ -49,10 +48,6 @@ public class GameProgressManager : MonoBehaviour
     public void ExitSetting()
     {
         SettingMenu.SetActive(false);
-    }
-    public void OpenStory()
-    {
-        Story.SetActive(true);
     }
 }
 
