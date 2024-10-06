@@ -4119,6 +4119,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 873077799010132122, guid: b15ae3a5d99d58743a7d94ea1943682b, type: 3}
+      propertyPath: heal
+      value: 
+      objectReference: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+    - target: {fileID: 873077799010132122, guid: b15ae3a5d99d58743a7d94ea1943682b, type: 3}
       propertyPath: theme
       value: 
       objectReference: {fileID: 8300000, guid: 8b19a567df08e40aa97756bf728db4c1, type: 3}

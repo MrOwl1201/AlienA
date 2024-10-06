@@ -34,7 +34,8 @@ public class GameProgressManager : MonoBehaviour
         Application.Quit();
     }
     public void OnGameWin()
-    {      
+    {
+        ScoreManager.instance.SaveScore();
         gameWin.SetActive(true);
     }
     public void OnGameLose()

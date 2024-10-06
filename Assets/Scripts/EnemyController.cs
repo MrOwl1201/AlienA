@@ -98,19 +98,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-    void ChasePlayer()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
-        if (player.position.x > transform.position.x)
-        {
-            movingRight = true;
-        }
-        else
-        {
-            movingRight = false;
-        }
-    }
     IEnumerator Shoots()
     {
        isShooting = true;
@@ -131,8 +118,8 @@ public class EnemyController : MonoBehaviour
             return;
         }
 
-        //Vector2 direction = (movingRight) ? Vector2.right : Vector2.left;
-        Vector2 direction = (transform.localScale.x > 0) ? Vector2.right : Vector2.left;
+        Vector2 direction = (movingRight) ? Vector2.right : Vector2.left;
+        //Vector2 direction = (transform.localScale.x > 0) ? Vector2.right : Vector2.left;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         EnemyBullet bulletScript = bullet.GetComponent<EnemyBullet>();
         if (movingRight)

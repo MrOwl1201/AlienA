@@ -239,6 +239,7 @@ public class AudioManager : MonoBehaviour
         efxVolume = volume;
         PlayerPrefs.SetFloat("EfxVolume", efxVolume);
         PlayerPrefs.Save();
+        UpdateVolumeLevels();
         jumpSource.volume *= efxVolume;
         runSource.volume *= efxVolume;
         shootSource.volume *= efxVolume;
@@ -266,7 +267,7 @@ public class AudioManager : MonoBehaviour
     {
         backgroundSource.volume = backgroundVolume * masterVolume;
         efxVolume = efxVolume * masterVolume;
-        SetEfxVolume( efxVolume );
+       // SetEfxVolume( efxVolume );
         
     }
 }
