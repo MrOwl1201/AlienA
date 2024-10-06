@@ -924,7 +924,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1800292604}
         m_TargetAssemblyTypeName: GameProgressManager, Assembly-CSharp
         m_MethodName: ExitSetting
         m_Mode: 1
